@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Logger</title>
+</head>
+<body onload="loadLocations()">
+
+    <h2>Location Tracker</h2>
+    <button onclick="getLocation()">Get My Location</button>
+
+    <p id="currentLocation"></p>
+
+    <h3>Location History</h3>
+    <ul id="locationHistory"></ul>
+
+    <script>
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+
+        function success(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+
+            document.getElementById("currentLocation").textContent =
+                "Latitude: " + lat + " | Longitude: " + lon;
+
+            var locations = JSON.parse(localStorage.getItem("locations")) || [];
+
+            locations.push({ latitude: lat, longitude: lon });
+
+            if (locations.length > 5) {
+                locations.shift(); // Keep last 5
+            }
+
+            localStorage.setItem("locations", JSON.stringify(locations));
+            loadLocations();
+        }
+
+        function error(err) {
+            alert("Error: " + err.message);
+        }
+
+        function loadLocations() {
+            var locations = JSON.parse(localStorage.getItem("locations")) || [];
+            var list = document.getElementById("locationHistory");
+            list.innerHTML = "";
+
+            for (var i = 0; i < locations.length; i++) {
+                var li = document.createElement("li");
+                li.textContent =
+                    "Lat: " + locations[i].latitude +
+                    ", Lon: " + locations[i].longitude;
+                list.appendChild(li);
+            }
+        }
+    </script>
+
+</body>
+</html>

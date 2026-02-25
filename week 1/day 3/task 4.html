@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Dashboard</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    flex: 0 0 20%;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1 1 30%;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: 1;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <nav class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li>Home</li>
+            <li>Analytics</li>
+            <li>Settings</li>
+            <li>Profile</li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1>Welcome Admin</h1>
+
+        <div class="cards">
+            <div class="card">Users: 120</div>
+            <div class="card">Sales: ₹45,000</div>
+            <div class="card">Orders: 75</div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

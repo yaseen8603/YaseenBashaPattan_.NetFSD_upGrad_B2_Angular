@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Blog</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.blog-card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1 1 30%;
+}
+
+.blog-card h3 {
+    margin-top: 0;
+}
+
+.blog-card button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #0077cc;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.blog-card button:hover {
+    background-color: #005fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-card {
+        flex: 1 1 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Blog</h1>
+</header>
+
+<section class="blog-container">
+
+    <div class="blog-card">
+        <h3>Understanding HTML</h3>
+        <p>Learn the structure and basics of HTML for web development.</p>
+        <button>Read More</button>
+    </div>
+
+    <div class="blog-card">
+        <h3>Mastering CSS</h3>
+        <p>Explore styling techniques and responsive layouts.</p>
+        <button>Read More</button>
+    </div>
+
+    <div class="blog-card">
+        <h3>Flexbox Guide</h3>
+        <p>Build modern layouts easily using Flexbox.</p>
+        <button>Read More</button>
+    </div>
+
+</section>
+
+</body>
+</html>
