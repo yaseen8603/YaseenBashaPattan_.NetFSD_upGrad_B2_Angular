@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enrollment Form</title>
+</head>
+<body>
+
+    <header>
+        <h1>Online Course Enrollment</h1>
+        <p>Enhance your skills by enrolling in our courses</p>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Enrollment Form</h2>
+
+            <form>
+
+                <!-- Email Input -->
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" 
+                       placeholder="example@email.com" required>
+                <br><br>
+
+                <!-- Course Selection with Datalist -->
+                <label for="course">Select Course:</label><br>
+                <input list="courses" id="course" name="course" 
+                       placeholder="Start typing course name..." required>
+
+                <datalist id="courses">
+                    <option value="Full Stack Web Development">
+                    <option value="Data Science">
+                    <option value="Cyber Security">
+                    <option value="Cloud Computing">
+                    <option value="Artificial Intelligence">
+                </datalist>
+                <br><br>
+
+                <!-- Skill Level using Range -->
+                <label for="skill">Skill Level (1 = Beginner, 10 = Advanced):</label><br>
+                <input type="range" id="skill" name="skill" 
+                       min="1" max="10" value="5">
+                <br><br>
+
+                <!-- Skill Meter -->
+                <label for="skillMeter">Skill Level Indicator:</label><br>
+                <meter id="skillMeter" 
+                       min="1" max="10" low="3" high="7" optimum="9" value="5">
+                </meter>
+                <br><br>
+
+                <!-- Number Input -->
+                <label for="experience">Years of Experience:</label><br>
+                <input type="number" id="experience" name="experience"
+                       min="0" max="20" required>
+                <br><br>
+
+                <!-- Enrollment Progress -->
+                <label>Enrollment Completion:</label><br>
+                <progress value="70" max="100"></progress>
+                <br><br>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Enroll Now">
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2026 Online Learning Platform</p>
+        <p>Contact: support@onlinelearning.com</p>
+    </footer>
+
+</body>
+</html>
